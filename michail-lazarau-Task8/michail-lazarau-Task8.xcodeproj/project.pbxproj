@@ -18,6 +18,8 @@
 		F78836FA26A31C8300A44DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F78836F826A31C8300A44DC3 /* LaunchScreen.storyboard */; };
 		F78836FD26A31C8300A44DC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F78836FC26A31C8300A44DC3 /* main.m */; };
 		F7AB661726A3AC230076C818 /* CanvasDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AB661626A3AC230076C818 /* CanvasDrawingView.m */; };
+		F7CAD1D226AC7FDA0053740E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CAD1D026AC7FDA0053740E /* Montserrat-Medium.ttf */; };
+		F7CAD1D326AC7FDA0053740E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		F78836FC26A31C8300A44DC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F7AB661526A3AC230076C818 /* CanvasDrawingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasDrawingView.h; sourceTree = "<group>"; };
 		F7AB661626A3AC230076C818 /* CanvasDrawingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasDrawingView.m; sourceTree = "<group>"; };
+		F7CAD1D026AC7FDA0053740E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		F78836E926A31C8100A44DC3 /* michail-lazarau-Task8 */ = {
 			isa = PBXGroup;
 			children = (
+				F7CAD1CF26AC7F9F0053740E /* Fonts */,
 				F7AB661426A3ABFF0076C818 /* Views */,
 				F788370426A3393800A44DC3 /* Delegates */,
 				F788370326A3389800A44DC3 /* Controllers */,
@@ -116,6 +121,15 @@
 				F7AB661626A3AC230076C818 /* CanvasDrawingView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F7CAD1CF26AC7F9F0053740E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F7CAD1D026AC7FDA0053740E /* Montserrat-Medium.ttf */,
+				F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +188,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7CAD1D326AC7FDA0053740E /* Montserrat-Regular.ttf in Resources */,
 				F759D36C26A451000013C377 /* ViewController.xib in Resources */,
+				F7CAD1D226AC7FDA0053740E /* Montserrat-Medium.ttf in Resources */,
 				F759D36A26A450A00013C377 /* DrawingsViewController.xib in Resources */,
 				F78836FA26A31C8300A44DC3 /* LaunchScreen.storyboard in Resources */,
 				F78836F726A31C8300A44DC3 /* Assets.xcassets in Resources */,
