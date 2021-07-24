@@ -28,9 +28,19 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYe-XB-d1X">
                     <rect key="frame" x="243" y="454" width="91" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Draw"/>
                     <connections>
                         <action selector="drawBtnWasTapped:" destination="-1" eventType="touchUpInside" id="WAB-6s-M81"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGJ-cV-ziX">
+                    <rect key="frame" x="20" y="454" width="163" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Open Palette"/>
+                    <connections>
+                        <action selector="openPaletteBtnWasTapped:" destination="-1" eventType="touchUpInside" id="4IK-EP-Wqu"/>
                     </connections>
                 </button>
             </subviews>

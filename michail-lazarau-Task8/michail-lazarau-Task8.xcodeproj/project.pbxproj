@@ -10,6 +10,7 @@
 		F759D36926A450A00013C377 /* DrawingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F759D36726A450A00013C377 /* DrawingsViewController.m */; };
 		F759D36A26A450A00013C377 /* DrawingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F759D36826A450A00013C377 /* DrawingsViewController.xib */; };
 		F759D36C26A451000013C377 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F759D36B26A451000013C377 /* ViewController.xib */; };
+		F75DF39926A9B54600F5A2C6 /* PaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75DF39826A9B54600F5A2C6 /* PaletteViewController.m */; };
 		F78836EC26A31C8100A44DC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F78836EB26A31C8100A44DC3 /* AppDelegate.m */; };
 		F78836EF26A31C8100A44DC3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F78836EE26A31C8100A44DC3 /* SceneDelegate.m */; };
 		F78836F226A31C8100A44DC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78836F126A31C8100A44DC3 /* ViewController.m */; };
@@ -24,6 +25,8 @@
 		F759D36726A450A00013C377 /* DrawingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingsViewController.m; sourceTree = "<group>"; };
 		F759D36826A450A00013C377 /* DrawingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingsViewController.xib; sourceTree = "<group>"; };
 		F759D36B26A451000013C377 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		F75DF39726A9B54600F5A2C6 /* PaletteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaletteViewController.h; sourceTree = "<group>"; };
+		F75DF39826A9B54600F5A2C6 /* PaletteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaletteViewController.m; sourceTree = "<group>"; };
 		F78836E726A31C8100A44DC3 /* michail-lazarau-Task8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "michail-lazarau-Task8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78836EA26A31C8100A44DC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F78836EB26A31C8100A44DC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				F759D36626A450A00013C377 /* DrawingsViewController.h */,
 				F759D36726A450A00013C377 /* DrawingsViewController.m */,
 				F759D36826A450A00013C377 /* DrawingsViewController.xib */,
+				F75DF39726A9B54600F5A2C6 /* PaletteViewController.h */,
+				F75DF39826A9B54600F5A2C6 /* PaletteViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			files = (
 				F78836F226A31C8100A44DC3 /* ViewController.m in Sources */,
 				F78836EC26A31C8100A44DC3 /* AppDelegate.m in Sources */,
+				F75DF39926A9B54600F5A2C6 /* PaletteViewController.m in Sources */,
 				F78836FD26A31C8300A44DC3 /* main.m in Sources */,
 				F759D36926A450A00013C377 /* DrawingsViewController.m in Sources */,
 				F7AB661726A3AC230076C818 /* CanvasDrawingView.m in Sources */,

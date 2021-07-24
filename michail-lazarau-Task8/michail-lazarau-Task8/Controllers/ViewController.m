@@ -1,6 +1,7 @@
 #import "ViewController.h"
 #import "DrawingsViewController.h"
 #import "CanvasDrawingView.h"
+#import "PaletteViewController.h"
 
 @interface ViewController ()
 
@@ -13,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet CanvasDrawingView *canvasView;
 @property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, strong) DrawingsViewController *drawingVC;
+@property (strong, nonatomic) PaletteViewController *paletteVC;
 
 @end
 
@@ -43,6 +45,9 @@
     
 }
 
+- (IBAction)openPaletteBtnWasTapped:(UIButton *)sender {
+        [self showPaletteViewController];
+}
 
 - (IBAction)drawBtnWasTapped:(UIButton *)sender {
     self.canvasView.type = Landscape;
@@ -52,6 +57,20 @@
 - (void)drawingsBtnWasTapped {
     //    navVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.navigationController pushViewController:self.drawingVC animated:true];
+}
+
+- (void)showPaletteViewController {
+    self.paletteVC = [[PaletteViewController alloc] init];
+    [self addChildViewController:self.paletteVC];
+    [self.view addSubview:self.paletteVC.view];
+    
+    self.paletteVC.view.frame = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height); // создан и спрятан позади других вью
+    
+    [UIView animateWithDuration:0.27 animations:^(void){
+        self.paletteVC.view.frame = CGRectMake(0, self.view.bounds.size.height / 2, self.view.bounds.size.width, self.view.bounds.size.height);
+    }]; // анимирование вида вью
+
+    [self.paletteVC didMoveToParentViewController:self]; // помести вперед других вью
 }
 
 @end

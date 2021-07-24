@@ -2,7 +2,7 @@
 
 @interface CanvasDrawingView()
 
-@property (strong, nonatomic) NSArray* landscapeDrawings; // cannot be assign!
+@property (copy, nonatomic) NSArray* landscapeDrawings; // cannot be assign!
 
 @end
 
@@ -424,7 +424,7 @@
     
     drawingAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     
-    drawingAnimation.duration = 2.0;
+    drawingAnimation.duration = 1.0;
     
     drawingAnimation.fromValue = @(0.0); // часть изображения, отрисованная до начала анимации
     
