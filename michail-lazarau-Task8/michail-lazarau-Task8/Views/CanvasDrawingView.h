@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "PaletteViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -8,10 +9,11 @@ typedef NS_ENUM(NSInteger, CanvasDrawingViewType) {
     Planet = 2
 };
 
-@interface CanvasDrawingView : UIView
+@interface CanvasDrawingView : UIView <PaletteViewControllerDelegate>
 
 // представлен примитивом integer
 @property (nonatomic, assign) CanvasDrawingViewType type;
+@property (nonatomic, copy) NSMutableSet<UIColor*> *colorSet;
 
 @end
 

@@ -26,9 +26,8 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     self.drawingVC = [[DrawingsViewController alloc] initWithNibName:@"DrawingsViewController" bundle:nil];
-    
     [self setupNavigationBarView];
-        
+
 //    [self setupButtons];
 }
 
@@ -65,7 +64,7 @@
     [self.view addSubview:self.paletteVC.view];
     
     self.paletteVC.view.frame = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height); // создан и спрятан позади других вью
-    
+
     [UIView animateWithDuration:0.27 animations:^(void){
         self.paletteVC.view.frame = CGRectMake(0, self.view.bounds.size.height / 2, self.view.bounds.size.width, self.view.bounds.size.height);
     }]; // анимирование вида вью

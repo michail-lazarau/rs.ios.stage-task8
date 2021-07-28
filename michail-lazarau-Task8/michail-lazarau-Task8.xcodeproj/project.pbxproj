@@ -20,6 +20,7 @@
 		F7AB661726A3AC230076C818 /* CanvasDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AB661626A3AC230076C818 /* CanvasDrawingView.m */; };
 		F7CAD1D226AC7FDA0053740E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CAD1D026AC7FDA0053740E /* Montserrat-Medium.ttf */; };
 		F7CAD1D326AC7FDA0053740E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */; };
+		F7CAD1DA26ACB1CE0053740E /* UIButton+colorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CAD1D926ACB1CE0053740E /* UIButton+colorButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		F7AB661626A3AC230076C818 /* CanvasDrawingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasDrawingView.m; sourceTree = "<group>"; };
 		F7CAD1D026AC7FDA0053740E /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		F7CAD1D826ACB1CE0053740E /* UIButton+colorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+colorButton.h"; sourceTree = "<group>"; };
+		F7CAD1D926ACB1CE0053740E /* UIButton+colorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+colorButton.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 		F78836E926A31C8100A44DC3 /* michail-lazarau-Task8 */ = {
 			isa = PBXGroup;
 			children = (
+				F7CAD1D426ACB0AC0053740E /* Categories */,
 				F7CAD1CF26AC7F9F0053740E /* Fonts */,
 				F7AB661426A3ABFF0076C818 /* Views */,
 				F788370426A3393800A44DC3 /* Delegates */,
@@ -130,6 +134,15 @@
 				F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F7CAD1D426ACB0AC0053740E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F7CAD1D826ACB1CE0053740E /* UIButton+colorButton.h */,
+				F7CAD1D926ACB1CE0053740E /* UIButton+colorButton.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +223,7 @@
 				F78836FD26A31C8300A44DC3 /* main.m in Sources */,
 				F759D36926A450A00013C377 /* DrawingsViewController.m in Sources */,
 				F7AB661726A3AC230076C818 /* CanvasDrawingView.m in Sources */,
+				F7CAD1DA26ACB1CE0053740E /* UIButton+colorButton.m in Sources */,
 				F78836EF26A31C8100A44DC3 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

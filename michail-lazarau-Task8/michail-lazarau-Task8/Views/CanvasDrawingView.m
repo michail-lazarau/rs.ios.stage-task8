@@ -10,6 +10,11 @@
 
 @synthesize landscapeDrawings;
 
+//-(instancetype)init {
+//    self = [super init];
+//    self.delega
+//}
+
 - (void)drawRect:(CGRect)rect {
     self.clearsContextBeforeDrawing = YES;
     
@@ -28,6 +33,10 @@
 -(void) setupCanvas {
     self.tintColor = UIColor.blueColor;
     self.backgroundColor = UIColor.whiteColor;
+}
+
+-(void)methodDelegate {
+    
 }
 
 - (UIBezierPath*) drawLandscapeHorizon {
