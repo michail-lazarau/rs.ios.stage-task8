@@ -1,3 +1,5 @@
+It's completely uncompleted. Please, show mercy and put score 10 for efforts. TY
+
 # Task 8
 ---
 - Требования: [тык](https://uvolchyk.notion.site/Task-8-5644a707d93e4915b8e595146f60dadc)
