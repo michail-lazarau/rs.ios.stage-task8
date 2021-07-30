@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, CanvasDrawingViewType) {
 
 // представлен примитивом integer
 @property (nonatomic, assign) CanvasDrawingViewType type;
-@property (nonatomic, copy) NSMutableSet<UIColor*> *colorSet;
+@property (nonatomic, copy) NSArray<UIColor*> *colorsSelected;
 
 @end
 

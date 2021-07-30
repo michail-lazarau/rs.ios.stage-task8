@@ -10,10 +10,15 @@
 
 @synthesize landscapeDrawings;
 
-//-(instancetype)init {
-//    self = [super init];
-//    self.delega
-//}
+- (void)sendColorStackToCanvas:(NSArray<UIColor*> *)colors {
+    NSMutableArray<UIColor*> *temp = [[NSMutableArray<UIColor*> alloc] initWithArray:colors];
+    if (colors.count < 3) {
+        for (int i = 0; i < 3 - colors.count; i++) {
+            [temp addObject:[UIColor blackColor]];
+        }
+    }
+    self.colorsSelected = [temp copy];
+}
 
 - (void)drawRect:(CGRect)rect {
     self.clearsContextBeforeDrawing = YES;
@@ -40,7 +45,7 @@
 }
 
 - (UIBezierPath*) drawLandscapeHorizon {
-//    UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
+//    UIColor* strokeColor = self.colorsSelected[0];
     
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint: CGPointMake(249, 134)];
@@ -217,7 +222,7 @@
 }
 
 -(UIBezierPath*)drawLandscapeMountains {
-//    UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
+//    UIColor* strokeColor = self.colorsSelected[1];
     
     UIBezierPath* bezier3Path = [UIBezierPath bezierPath];
     [bezier3Path moveToPoint: CGPointMake(103.5, 153)];
@@ -342,7 +347,7 @@
 }
 
 -(UIBezierPath*)drawLandscapeGround {
-//    UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
+//    UIColor* strokeColor = self.colorsSelected[2];
     
     UIBezierPath* bezier2Path = [UIBezierPath bezierPath];
     [bezier2Path moveToPoint: CGPointMake(35.5, 213.5)];
@@ -400,7 +405,7 @@
     
     NSArray<CAShapeLayer*> *shapeLayers = [[NSArray alloc] initWithObjects:[CAShapeLayer layer], [CAShapeLayer layer], [CAShapeLayer layer], nil];
     
-    UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
+//    UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
     
     for (int i = 0; i < shapeLayers.count-1; i++) {
         UIBezierPath* path = [self landscapeDrawings][i];
@@ -408,7 +413,8 @@
         shapeLayers[i].fillColor = [UIColor clearColor].CGColor; // prevent the shape layer from filling
         [self.layer addSublayer:shapeLayers[i]];
         
-        shapeLayers[i].strokeColor = strokeColor.CGColor; // цвет линии рисования
+        shapeLayers[i].strokeColor = self.colorsSelected[i].CGColor; // цвет линии рисования
+//        shapeLayers[i].strokeColor = strokeColor.CGColor;
         shapeLayers[i].strokeStart = 0.0; // начало пути относительно координат stroke?
         [shapeLayers[i] addAnimation:[[self class] setupDrawsAnimation] forKey:nil];
         path = nil;

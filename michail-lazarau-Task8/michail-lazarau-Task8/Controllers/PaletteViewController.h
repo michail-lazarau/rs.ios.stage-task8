@@ -4,15 +4,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PaletteViewControllerDelegate <NSObject>
 
--(void) sendColorStackToCanvas;
+-(void) sendColorStackToCanvas:(NSArray<UIColor*> *)colors;
 
 @end
 
 @interface PaletteViewController : UIViewController
 
 @property (nonatomic, weak) id <PaletteViewControllerDelegate> delegate;
-//@property (nonatomic, copy) NSMutableSet<id> *colorSet;
-@property (nonatomic, strong) NSMutableOrderedSet<id> *colorSet;
+@property (nonatomic, strong) NSMutableArray<UIColor*> *colorsSelected;
 
 @end
 
