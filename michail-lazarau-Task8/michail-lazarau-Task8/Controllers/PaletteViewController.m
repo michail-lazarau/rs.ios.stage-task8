@@ -28,6 +28,15 @@ CGFloat const buttonSize = 40;
     [self setupColorButtons];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    for (UIColor *color in self.colorsSelected) {
+        [UIView animateWithDuration:0.27 animations:^{
+                 [sender.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
+         }];
+    }
+}
+
 -(void)setupPaletteView {
     self.view.backgroundColor = UIColor.systemGray6Color;
     self.view.layer.cornerRadius = 40; // закругление края
@@ -100,9 +109,6 @@ CGFloat const buttonSize = 40;
              [self.view removeFromSuperview];
              [self removeFromParentViewController];
      }];
-}
-
-- (void)pushColorInStack:(UIButton *)sender {
 }
 
 - (void)colorButtonWasTapped:(UIButton *)sender {

@@ -40,10 +40,6 @@
     self.backgroundColor = UIColor.whiteColor;
 }
 
--(void)methodDelegate {
-    
-}
-
 - (UIBezierPath*) drawLandscapeHorizon {
 //    UIColor* strokeColor = self.colorsSelected[0];
     
@@ -407,7 +403,7 @@
     
 //    UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
     
-    for (int i = 0; i < shapeLayers.count-1; i++) {
+    for (int i = 0; i < shapeLayers.count; i++) {
         UIBezierPath* path = [self landscapeDrawings][i];
         shapeLayers[i].path = path.CGPath;
         shapeLayers[i].fillColor = [UIColor clearColor].CGColor; // prevent the shape layer from filling
@@ -436,13 +432,9 @@
 
 +(CABasicAnimation*) setupDrawsAnimation {
     CABasicAnimation *drawingAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    
     drawingAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    
     drawingAnimation.duration = 1.0;
-    
     drawingAnimation.fromValue = @(0.0); // часть изображения, отрисованная до начала анимации
-    
     drawingAnimation.toValue = @(1.0); //cкорость отрисовки. Если длится дольше, чем duration, то часть изображения отрисуется анимированно, а часть - мгновенно
     
     return drawingAnimation;
