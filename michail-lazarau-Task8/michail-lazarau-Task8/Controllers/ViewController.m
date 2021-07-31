@@ -64,6 +64,9 @@
     [self.paletteVC setDelegate:self.canvasView]; // this!!!
     [self.view addSubview:self.paletteVC.view];
     
+    NSPredicate *notBlackColor = [NSPredicate predicateWithValue:![UIColor blackColor]];
+//    self.paletteVC.colorsSelected = [[self.canvasView.colorsSelected filteredArrayUsingPredicate: notBlackColor] mutableCopy];
+    
     self.paletteVC.view.frame = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height); // создан и спрятан позади других вью
 
     [UIView animateWithDuration:0.27 animations:^(void){

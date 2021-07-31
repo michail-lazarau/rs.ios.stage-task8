@@ -9,14 +9,33 @@ CGFloat const buttonSize = 40;
 @interface PaletteViewController ()
 
 @property(nonatomic,strong) UIButton *saveBtn;
+//@property(nonatomic,strong) NSMutableArray<UIButton *> *selectedButtons;
 
 @end
 
 @implementation PaletteViewController
 
-//-(void)chooseColors {
-////    self.delegate = [self sendColorStackToCanvas];
+//- (NSMutableArray<UIButton *> *)selectedButtons {
+//    if (_selectedButtons == nil) {
+//        _selectedButtons = [[NSMutableArray<UIButton*> alloc] init];
+//    }
+//    return _selectedButtons;
 //}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    for (UIButton *button in self.view.subviews) {
+        UIColor* temp = [[UIColor alloc] initWithCGColor:button.layer.sublayers[0].backgroundColor];
+        if ([self.colorsSelected containsObject:temp]) {
+            [button.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
+        }
+    }
+    
+//    for (UIButton *colorButton in _selectedButtons) {
+//        [colorButton.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
+//    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,15 +45,6 @@ CGFloat const buttonSize = 40;
     [self setupPaletteView];
     [self setupSaveButton];
     [self setupColorButtons];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    for (UIColor *color in self.colorsSelected) {
-        [UIView animateWithDuration:0.27 animations:^{
-                 [sender.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
-         }];
-    }
 }
 
 -(void)setupPaletteView {
@@ -59,7 +69,7 @@ CGFloat const buttonSize = 40;
 
 - (void) setupColorButtons {
 
-    NSArray<UIColor *> *colorsFirstRow = [[NSArray alloc] initWithObjects:
+    NSArray<UIColor *> *colors = [[NSArray alloc] initWithObjects:
                                           [UIColor colorNamed:@"rsRed"],
                                           [UIColor colorNamed:@"rsBlue"],
                                           [UIColor colorNamed:@"rsGreen"],
@@ -91,7 +101,7 @@ CGFloat const buttonSize = 40;
         sublayer.frame = CGRectMake(8, 8, colorLayerSize, colorLayerSize);
         sublayer.cornerRadius = 10.0f;
         sublayer.masksToBounds = true;
-        sublayer.backgroundColor = colorsFirstRow[i].CGColor;
+        sublayer.backgroundColor = colors[i].CGColor;
         [button.layer addSublayer: sublayer];
 
         [button addTarget:self action:@selector(colorButtonWasTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -117,6 +127,7 @@ CGFloat const buttonSize = 40;
     
     if ([self.colorsSelected containsObject:color]) {
         [self.colorsSelected removeObject:color];
+//        [_selectedButtons removeObject:sender];
         
         // shitty made
         [UIView animateWithDuration:0.27 animations:^{
@@ -124,6 +135,7 @@ CGFloat const buttonSize = 40;
         }];
     } else {
         [self.colorsSelected addObject: color];
+//        [_selectedButtons addObject:sender];
         
         [UIView animateWithDuration:0.27 animations:^{
                  [sender.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
