@@ -61,11 +61,13 @@
 - (void)showPaletteViewController {
     self.paletteVC = [[PaletteViewController alloc] init];
     [self addChildViewController:self.paletteVC];
-    [self.paletteVC setDelegate:self.canvasView]; // this!!!
-    [self.view addSubview:self.paletteVC.view];
     
     NSPredicate *notBlackColor = [NSPredicate predicateWithValue:![UIColor blackColor]];
 //    self.paletteVC.colorsSelected = [[self.canvasView.colorsSelected filteredArrayUsingPredicate: notBlackColor] mutableCopy];
+    self.paletteVC.colorsSelected = [self.canvasView.colorsSelected mutableCopy];
+    
+    [self.paletteVC setDelegate:self.canvasView]; // this!!!
+    [self.view addSubview:self.paletteVC.view];
     
     self.paletteVC.view.frame = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height); // создан и спрятан позади других вью
 
