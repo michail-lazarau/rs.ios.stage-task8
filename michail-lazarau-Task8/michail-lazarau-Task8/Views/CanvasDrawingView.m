@@ -11,13 +11,15 @@
 @synthesize landscapeDrawings;
 
 - (void)sendColorStackToCanvas:(NSArray<UIColor*> *)colors {
-    NSMutableArray<UIColor*> *temp = [[NSMutableArray<UIColor*> alloc] initWithArray:colors];
-    if (colors.count < 3) {
-        for (int i = 0; i < 3 - colors.count; i++) {
-            [temp addObject:[UIColor blackColor]];
-        }
-    }
-    self.colorsSelected = [temp copy];
+    // больше не повторять такое говно
+//    NSMutableArray<UIColor*> *temp = [[NSMutableArray<UIColor*> alloc] initWithArray:colors];
+//    if (colors.count < 3) {
+//        for (int i = 0; i < 3 - colors.count; i++) {
+//            [temp addObject:[UIColor blackColor]];
+//        }
+//    }
+//    self.colorsSelected = [temp copy];
+    self.colorsSelected = colors;
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -42,7 +44,6 @@
 
 - (UIBezierPath*) drawLandscapeHorizon {
 //    UIColor* strokeColor = self.colorsSelected[0];
-    
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint: CGPointMake(249, 134)];
     [bezierPath addLineToPoint: CGPointMake(255.5, 143.5)];
@@ -400,17 +401,18 @@
     // https://stackoverflow.com/questions/35363104/animating-bezier-curve-as-though-drawing-proceeds-on-iphone-screen
     
     NSArray<CAShapeLayer*> *shapeLayers = [[NSArray alloc] initWithObjects:[CAShapeLayer layer], [CAShapeLayer layer], [CAShapeLayer layer], nil];
-    
-//    UIColor* strokeColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 1];
-    
     for (int i = 0; i < shapeLayers.count; i++) {
         UIBezierPath* path = [self landscapeDrawings][i];
         shapeLayers[i].path = path.CGPath;
         shapeLayers[i].fillColor = [UIColor clearColor].CGColor; // prevent the shape layer from filling
         [self.layer addSublayer:shapeLayers[i]];
         
-        shapeLayers[i].strokeColor = self.colorsSelected[i].CGColor; // цвет линии рисования
-//        shapeLayers[i].strokeColor = strokeColor.CGColor;
+        if (i > self.colorsSelected.count - 1) {
+            shapeLayers[i].strokeColor = [UIColor blackColor].CGColor;
+        } else {
+            shapeLayers[i].strokeColor = self.colorsSelected[i].CGColor; // цвет линии рисования
+        }
+
         shapeLayers[i].strokeStart = 0.0; // начало пути относительно координат stroke?
         [shapeLayers[i] addAnimation:[[self class] setupDrawsAnimation] forKey:nil];
         path = nil;
