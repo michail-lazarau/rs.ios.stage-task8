@@ -16,9 +16,6 @@
 
     UINavigationController *navigationVC = [[UINavigationController alloc] init];
     [navigationVC setViewControllers:@[mainVC]];
-    
-    
-    
 //    UINavigationController *navigationVC = [[UINavigtionController alloc] initWithRootViewController:mainVC];
     
     self.window.rootViewController = navigationVC;

@@ -24,23 +24,21 @@ CGFloat const buttonSize = 40;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     for (UIButton *button in self.view.subviews) {
         UIColor* temp = [[UIColor alloc] initWithCGColor:button.layer.sublayers[0].backgroundColor];
         if ([self.colorsSelected containsObject:temp]) {
             [button.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
         }
     }
-    
-//    for (UIButton *colorButton in _selectedButtons) {
-//        [colorButton.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
-//    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //if (self.colorsSelected == nil) {
     self.colorsSelected = [[NSMutableArray<UIColor*> alloc] init];
+   // }
     
     [self setupPaletteView];
     [self setupSaveButton];
