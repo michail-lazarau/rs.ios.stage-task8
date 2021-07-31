@@ -36,9 +36,9 @@ CGFloat const buttonSize = 40;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //if (self.colorsSelected == nil) {
+    if (self.colorsSelected == nil) {
     self.colorsSelected = [[NSMutableArray<UIColor*> alloc] init];
-   // }
+    }
     
     [self setupPaletteView];
     [self setupSaveButton];
