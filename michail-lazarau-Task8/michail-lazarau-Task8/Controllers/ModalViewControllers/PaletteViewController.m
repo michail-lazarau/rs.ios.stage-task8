@@ -15,7 +15,7 @@ CGFloat const buttonSize = 40;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    for (UIButton *button in self.view.subviews) {
+    for (ColorButton *button in self.view.subviews) {
         UIColor* temp = [[UIColor alloc] initWithCGColor:button.layer.sublayers[0].backgroundColor];
         if ([self.colorsSelected containsObject:temp]) {
             [button.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
