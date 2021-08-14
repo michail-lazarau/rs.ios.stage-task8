@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
                 <outlet property="canvasView" destination="mZa-zk-KBM" id="maT-Dr-Jpi"/>
+                <outlet property="drawResetBtn" destination="lYe-XB-d1X" id="FBK-x5-P3N"/>
                 <outlet property="view" destination="iN0-l3-epB" id="e9p-0U-gdy"/>
             </connections>
         </placeholder>
@@ -30,9 +31,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Draw"/>
-                    <connections>
-                        <action selector="drawBtnWasTapped:" destination="-1" eventType="touchUpInside" id="WAB-6s-M81"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGJ-cV-ziX">
                     <rect key="frame" x="20" y="454" width="163" height="32"/>

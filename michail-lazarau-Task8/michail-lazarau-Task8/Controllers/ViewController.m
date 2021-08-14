@@ -3,18 +3,24 @@
 #import "CanvasDrawingView.h"
 #import "PaletteViewController.h"
 
-@interface ViewController ()
+enum State {
+   idle,
+   drawing,
+   done
+};
 
+@interface ViewController ()
 
 @property (strong, nonatomic) UIButton *openPaletteBtn;
 @property (strong, nonatomic) UIButton *shareBtn;
-@property (strong, nonatomic) UIButton *drawBtn;
 @property (strong, nonatomic) UIButton *openTimerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *drawResetBtn;
 
 @property (strong, nonatomic) IBOutlet CanvasDrawingView *canvasView;
 @property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, strong) DrawingsViewController *drawingVC;
 @property (strong, nonatomic) PaletteViewController *paletteVC;
+@property (nonatomic,assign) enum State type;
 
 @end
 
@@ -27,8 +33,8 @@
     
     self.drawingVC = [[DrawingsViewController alloc] initWithNibName:@"DrawingsViewController" bundle:nil];
     [self setupNavigationBarView];
-
-//    [self setupButtons];
+    [self setupButtons];
+    [self setupIdleState];
 }
 
 -(void) setupNavigationBarView {
@@ -40,17 +46,22 @@
                                                                              action:@selector(drawingsBtnWasTapped)];
 }
 
--(void)setupCanvasView {
-    
+-(void)setupButtons {
+    [self.drawResetBtn addTarget:self action:@selector(drawResetBtnWasTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (IBAction)openPaletteBtnWasTapped:(UIButton *)sender {
         [self showPaletteViewController];
 }
 
-- (IBAction)drawBtnWasTapped:(UIButton *)sender {
-    self.canvasView.type = Landscape;
-    [self.canvasView setNeedsDisplay];
+- (void)drawResetBtnWasTapped {
+    if (self.type == idle) {
+        self.canvasView.type = Landscape;
+        [self.canvasView setNeedsDisplay];
+        [self setupDoneState];
+    } else {
+        [self setupIdleState];
+    }
 }
 
 - (void)drawingsBtnWasTapped {
@@ -62,9 +73,7 @@
     self.paletteVC = [[PaletteViewController alloc] init];
     [self addChildViewController:self.paletteVC];
     
-    NSPredicate *notBlackColor = [NSPredicate predicateWithValue:![UIColor blackColor]];
-//    self.paletteVC.colorsSelected = [[self.canvasView.colorsSelected filteredArrayUsingPredicate: notBlackColor] mutableCopy];
-    self.paletteVC.colorsSelected = [self.canvasView.colorsSelected mutableCopy];
+    self.paletteVC.colorsSelected = [self.canvasView.colorsSelected mutableCopy]; // должно быть передано до добавления вью (завязано на инициализации объектов во viewDidLoad). Читать жизненный цикл
     
     [self.paletteVC setDelegate:self.canvasView]; // this!!!
     [self.view addSubview:self.paletteVC.view];
@@ -74,20 +83,37 @@
     [UIView animateWithDuration:0.27 animations:^(void){
         self.paletteVC.view.frame = CGRectMake(0, self.view.bounds.size.height / 2, self.view.bounds.size.width, self.view.bounds.size.height);
     }]; // анимирование вида вью
-
+    
     [self.paletteVC didMoveToParentViewController:self]; // помести вперед других вью
 }
 
-@end
+#pragma mark Extension
 
-//-(void)showDrawingViewController {
-//    //инициализировали дочерний VC
-//    self.drawingVC = [[DrawingsViewController alloc] initWithNibName:@"DrawingsViewController" bundle:nil];
-//
-//    [self addChildViewController:self.drawingVC];
-//    [self.view addSubview:self.drawingVC.view];
-//    [self.drawingVC didMoveToParentViewController:self];
- //}
+-(void) setupIdleState {
+    self.type = idle;
+    
+    [self.drawResetBtn setTitle:@"Draw" forState:UIControlStateNormal];
+    for (CAShapeLayer *layer in self.canvasView.shapeLayers) {
+        layer.strokeEnd = 0.0;
+    }
+}
+
+-(void) setupDrawState {
+    self.type = drawing;
+    
+    [self.drawResetBtn setEnabled:NO];
+    self.drawResetBtn.alpha = 0.5;
+}
+
+-(void) setupDoneState {
+    self.type = done;
+    
+    [self.drawResetBtn setTitle:@"Reset" forState:UIControlStateNormal];
+    [self.drawResetBtn setEnabled:YES];
+    self.drawResetBtn.alpha = 1.0;
+}
+
+@end
 
 //-(void) setupButtons {
 //

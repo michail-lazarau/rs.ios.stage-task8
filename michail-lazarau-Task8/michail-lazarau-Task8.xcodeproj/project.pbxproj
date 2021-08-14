@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7310CEE26C819E700FAA19B /* TimerControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7310CED26C819E700FAA19B /* TimerControllerViewController.swift */; };
+		F7310CF126C81B6A00FAA19B /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7310CF026C81B6A00FAA19B /* ModalViewController.m */; };
 		F759D36926A450A00013C377 /* DrawingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F759D36726A450A00013C377 /* DrawingsViewController.m */; };
 		F759D36A26A450A00013C377 /* DrawingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F759D36826A450A00013C377 /* DrawingsViewController.xib */; };
 		F759D36C26A451000013C377 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F759D36B26A451000013C377 /* ViewController.xib */; };
@@ -21,9 +23,14 @@
 		F7CAD1D226AC7FDA0053740E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CAD1D026AC7FDA0053740E /* Montserrat-Medium.ttf */; };
 		F7CAD1D326AC7FDA0053740E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */; };
 		F7CAD1DA26ACB1CE0053740E /* UIButton+colorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CAD1D926ACB1CE0053740E /* UIButton+colorButton.m */; };
+		F7EE64A726BDDFA70039099F /* CanvasDrawingView+Landscape.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE64A626BDDFA70039099F /* CanvasDrawingView+Landscape.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7310CEC26C819E600FAA19B /* michail-lazarau-Task8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "michail-lazarau-Task8-Bridging-Header.h"; sourceTree = "<group>"; };
+		F7310CED26C819E700FAA19B /* TimerControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControllerViewController.swift; sourceTree = "<group>"; };
+		F7310CEF26C81B6A00FAA19B /* ModalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		F7310CF026C81B6A00FAA19B /* ModalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		F759D36626A450A00013C377 /* DrawingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingsViewController.h; sourceTree = "<group>"; };
 		F759D36726A450A00013C377 /* DrawingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingsViewController.m; sourceTree = "<group>"; };
 		F759D36826A450A00013C377 /* DrawingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingsViewController.xib; sourceTree = "<group>"; };
@@ -47,6 +54,8 @@
 		F7CAD1D126AC7FDA0053740E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		F7CAD1D826ACB1CE0053740E /* UIButton+colorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+colorButton.h"; sourceTree = "<group>"; };
 		F7CAD1D926ACB1CE0053740E /* UIButton+colorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+colorButton.m"; sourceTree = "<group>"; };
+		F7EE64A526BDDFA70039099F /* CanvasDrawingView+Landscape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CanvasDrawingView+Landscape.h"; sourceTree = "<group>"; };
+		F7EE64A626BDDFA70039099F /* CanvasDrawingView+Landscape.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CanvasDrawingView+Landscape.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +69,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7310CEB26C8164500FAA19B /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				F7AB661526A3AC230076C818 /* CanvasDrawingView.h */,
+				F7AB661626A3AC230076C818 /* CanvasDrawingView.m */,
+				F7EE64A526BDDFA70039099F /* CanvasDrawingView+Landscape.h */,
+				F7EE64A626BDDFA70039099F /* CanvasDrawingView+Landscape.m */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		F7310CF226C824F000FAA19B /* ModalViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F75DF39726A9B54600F5A2C6 /* PaletteViewController.h */,
+				F75DF39826A9B54600F5A2C6 /* PaletteViewController.m */,
+				F7310CEF26C81B6A00FAA19B /* ModalViewController.h */,
+				F7310CF026C81B6A00FAA19B /* ModalViewController.m */,
+			);
+			path = ModalViewControllers;
+			sourceTree = "<group>";
+		};
 		F78836DE26A31C8100A44DC3 = {
 			isa = PBXGroup;
 			children = (
@@ -95,14 +126,15 @@
 		F788370326A3389800A44DC3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F7310CF226C824F000FAA19B /* ModalViewControllers */,
 				F78836F026A31C8100A44DC3 /* ViewController.h */,
 				F78836F126A31C8100A44DC3 /* ViewController.m */,
 				F759D36B26A451000013C377 /* ViewController.xib */,
 				F759D36626A450A00013C377 /* DrawingsViewController.h */,
 				F759D36726A450A00013C377 /* DrawingsViewController.m */,
 				F759D36826A450A00013C377 /* DrawingsViewController.xib */,
-				F75DF39726A9B54600F5A2C6 /* PaletteViewController.h */,
-				F75DF39826A9B54600F5A2C6 /* PaletteViewController.m */,
+				F7310CED26C819E700FAA19B /* TimerControllerViewController.swift */,
+				F7310CEC26C819E600FAA19B /* michail-lazarau-Task8-Bridging-Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,8 +153,7 @@
 		F7AB661426A3ABFF0076C818 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F7AB661526A3AC230076C818 /* CanvasDrawingView.h */,
-				F7AB661626A3AC230076C818 /* CanvasDrawingView.m */,
+				F7310CEB26C8164500FAA19B /* Canvas */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +206,7 @@
 				TargetAttributes = {
 					F78836E626A31C8100A44DC3 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -221,9 +253,12 @@
 				F78836EC26A31C8100A44DC3 /* AppDelegate.m in Sources */,
 				F75DF39926A9B54600F5A2C6 /* PaletteViewController.m in Sources */,
 				F78836FD26A31C8300A44DC3 /* main.m in Sources */,
+				F7310CEE26C819E700FAA19B /* TimerControllerViewController.swift in Sources */,
+				F7310CF126C81B6A00FAA19B /* ModalViewController.m in Sources */,
 				F759D36926A450A00013C377 /* DrawingsViewController.m in Sources */,
 				F7AB661726A3AC230076C818 /* CanvasDrawingView.m in Sources */,
 				F7CAD1DA26ACB1CE0053740E /* UIButton+colorButton.m in Sources */,
+				F7EE64A726BDDFA70039099F /* CanvasDrawingView+Landscape.m in Sources */,
 				F78836EF26A31C8100A44DC3 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W8CYASRM76;
 				INFOPLIST_FILE = "michail-lazarau-Task8/Info.plist";
@@ -368,6 +404,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.michail-lazarau-Task8";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "michail-lazarau-Task8/Controllers/michail-lazarau-Task8-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -377,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W8CYASRM76;
 				INFOPLIST_FILE = "michail-lazarau-Task8/Info.plist";
@@ -386,6 +426,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.personal.michail-lazarau-Task8";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "michail-lazarau-Task8/Controllers/michail-lazarau-Task8-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
