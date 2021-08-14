@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F7310CEE26C819E700FAA19B /* TimerControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7310CED26C819E700FAA19B /* TimerControllerViewController.swift */; };
 		F7310CF126C81B6A00FAA19B /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7310CF026C81B6A00FAA19B /* ModalViewController.m */; };
+		F7310CF626C8406400FAA19B /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F7310CF526C8406400FAA19B /* ColorButton.m */; };
 		F759D36926A450A00013C377 /* DrawingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F759D36726A450A00013C377 /* DrawingsViewController.m */; };
 		F759D36A26A450A00013C377 /* DrawingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F759D36826A450A00013C377 /* DrawingsViewController.xib */; };
 		F759D36C26A451000013C377 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F759D36B26A451000013C377 /* ViewController.xib */; };
@@ -31,6 +32,8 @@
 		F7310CED26C819E700FAA19B /* TimerControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControllerViewController.swift; sourceTree = "<group>"; };
 		F7310CEF26C81B6A00FAA19B /* ModalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
 		F7310CF026C81B6A00FAA19B /* ModalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		F7310CF426C8406400FAA19B /* ColorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		F7310CF526C8406400FAA19B /* ColorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
 		F759D36626A450A00013C377 /* DrawingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingsViewController.h; sourceTree = "<group>"; };
 		F759D36726A450A00013C377 /* DrawingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingsViewController.m; sourceTree = "<group>"; };
 		F759D36826A450A00013C377 /* DrawingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingsViewController.xib; sourceTree = "<group>"; };
@@ -89,6 +92,15 @@
 				F7310CF026C81B6A00FAA19B /* ModalViewController.m */,
 			);
 			path = ModalViewControllers;
+			sourceTree = "<group>";
+		};
+		F7310CF326C8404100FAA19B /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F7310CF426C8406400FAA19B /* ColorButton.h */,
+				F7310CF526C8406400FAA19B /* ColorButton.m */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		F78836DE26A31C8100A44DC3 = {
@@ -153,6 +165,7 @@
 		F7AB661426A3ABFF0076C818 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F7310CF326C8404100FAA19B /* Buttons */,
 				F7310CEB26C8164500FAA19B /* Canvas */,
 			);
 			path = Views;
@@ -256,6 +269,7 @@
 				F7310CEE26C819E700FAA19B /* TimerControllerViewController.swift in Sources */,
 				F7310CF126C81B6A00FAA19B /* ModalViewController.m in Sources */,
 				F759D36926A450A00013C377 /* DrawingsViewController.m in Sources */,
+				F7310CF626C8406400FAA19B /* ColorButton.m in Sources */,
 				F7AB661726A3AC230076C818 /* CanvasDrawingView.m in Sources */,
 				F7CAD1DA26ACB1CE0053740E /* UIButton+colorButton.m in Sources */,
 				F7EE64A726BDDFA70039099F /* CanvasDrawingView+Landscape.m in Sources */,

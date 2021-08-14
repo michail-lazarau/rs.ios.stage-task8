@@ -7,18 +7,10 @@ CGFloat const colorLayerSize = 24;
 CGFloat const buttonSize = 40;
 
 @interface PaletteViewController ()
-//@property(nonatomic,strong) NSMutableArray<UIButton *> *selectedButtons;
 
 @end
 
 @implementation PaletteViewController
-
-//- (NSMutableArray<UIButton *> *)selectedButtons {
-//    if (_selectedButtons == nil) {
-//        _selectedButtons = [[NSMutableArray<UIButton*> alloc] init];
-//    }
-//    return _selectedButtons;
-//}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
