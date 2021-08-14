@@ -1,9 +1,9 @@
 #import "PaletteViewController.h"
 #import "UIButton+colorButton.h"
+#import "ColorButton.h"
 
 int const BUTTON_COUNT = 12;
 int const BUTTON_SPACING = 20;
-CGFloat const colorLayerSize = 24;
 CGFloat const buttonSize = 40;
 
 @interface PaletteViewController ()
@@ -53,23 +53,11 @@ CGFloat const buttonSize = 40;
     for (int i = 0; i < BUTTON_COUNT; i++) {
         UIButton *button;
         if (i < 6) {
-            button = [[UIButton alloc] initWithFrame: CGRectMake(i * (BUTTON_SPACING + buttonSize) + 17, 92, buttonSize, buttonSize)];
+            button = [[ColorButton alloc] initWithFrame: CGRectMake(i * (BUTTON_SPACING + buttonSize) + 17, 92, buttonSize, buttonSize) andbackgroundColor:colors[i]];
         } else {
-            button = [[UIButton alloc] initWithFrame: CGRectMake((i-6) * (BUTTON_SPACING + buttonSize) + 17, 152, buttonSize, buttonSize)];
+            button = [[ColorButton alloc] initWithFrame: CGRectMake((i-6) * (BUTTON_SPACING + buttonSize) + 17, 152, buttonSize, buttonSize) andbackgroundColor:colors[i]];
         }
-
-        button.backgroundColor = [UIColor colorNamed:@"White"];
-        button.layer.cornerRadius = 10.0f;
         button.tag = i;
-        button.layer.masksToBounds = true;
-
-        CALayer *sublayer = [CALayer layer];
-        sublayer.frame = CGRectMake(8, 8, colorLayerSize, colorLayerSize);
-        sublayer.cornerRadius = 10.0f;
-        sublayer.masksToBounds = true;
-        sublayer.backgroundColor = colors[i].CGColor;
-        [button.layer addSublayer: sublayer];
-
         [button addTarget:self action:@selector(colorButtonWasTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
     }
@@ -86,17 +74,10 @@ CGFloat const buttonSize = 40;
     
     if ([self.colorsSelected containsObject:color]) {
         [self.colorsSelected removeObject:color];
-        
-        // shitty made
-        [UIView animateWithDuration:0.27 animations:^{
-                    [sender.layer.sublayers[0] setFrame: CGRectMake(8, 8, colorLayerSize, colorLayerSize)];
-        }];
+        [sender setSelected:NO];
     } else {
         [self.colorsSelected addObject: color];
-        
-        [UIView animateWithDuration:0.27 animations:^{
-                 [sender.layer.sublayers[0] setFrame: CGRectMake(3, 3, 35, 35)];
-         }];
+        [sender setSelected:YES];
     }
 }
 

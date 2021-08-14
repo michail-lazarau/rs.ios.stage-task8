@@ -1,9 +1,6 @@
 #import "ColorButton.h"
 
-int const BUTTON_COUNT = 12;
-int const BUTTON_SPACING = 20;
 CGFloat const colorLayerSize = 24;
-CGFloat const buttonSize = 40;
 
 @implementation ColorButton
 
@@ -12,7 +9,6 @@ CGFloat const buttonSize = 40;
     
     self.backgroundColor = [UIColor colorNamed:@"White"];
     self.layer.cornerRadius = 10.0f;
-//    button.tag = i;
     self.layer.masksToBounds = true;
 
     CALayer *sublayer = [CALayer layer];
@@ -21,8 +17,6 @@ CGFloat const buttonSize = 40;
     sublayer.masksToBounds = true;
     sublayer.backgroundColor = color.CGColor;
     [self.layer addSublayer: sublayer];
-
-//    [self addTarget:self action:@selector(colorButtonWasTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     return self;
 }
@@ -38,19 +32,7 @@ CGFloat const buttonSize = 40;
                     [self.layer.sublayers[0] setFrame: CGRectMake(8, 8, colorLayerSize, colorLayerSize)];
         }];
 }
-
-//- (void)colorButtonWasTapped:(UIButton *)sender {
-//    UIColor *color = [[UIColor alloc] initWithCGColor:sender.layer.sublayers[0].backgroundColor];
-//
-//    bool selected = [self.colorsSelected containsObject:color]
-//    if (selected) {
-//        [self.colorsSelected removeObject:color];
-//        [self setSelected:selected]; // decrease background
-//    } else {
-//        [self.colorsSelected addObject: color];
-//        [self setSelected:!selected]; // increase background
-//    }
-//}
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
