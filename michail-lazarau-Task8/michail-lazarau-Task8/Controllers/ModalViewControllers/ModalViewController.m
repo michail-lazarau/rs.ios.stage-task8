@@ -2,6 +2,8 @@
 
 @interface ModalViewController ()
 
+@property(nonatomic,strong) UIButton *saveBtn;
+
 @end
 
 @implementation ModalViewController
@@ -10,6 +12,7 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
 	[self setupPaletteView];
+    [self setupSaveButton];
 }
 
 -(void)setupPaletteView {
@@ -19,6 +22,17 @@
 	self.view.layer.shadowOpacity = 1.0; // прозрачность тени - works as alpha - useless here
 	self.view.layer.shadowOffset = CGSizeMake(5, -5); // смещение тени
 	self.view.layer.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.25].CGColor;
+}
+
+- (void)setupSaveButton {
+    self.saveBtn = [[UIButton alloc] initWithFrame:CGRectMake(250, 20, 85, 32)];
+    [self.saveBtn setTitle:@"Save" forState:UIControlStateNormal];
+    [self.saveBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    self.saveBtn.layer.borderWidth = 1.0;
+    self.saveBtn.layer.borderColor = UIColor.systemGreenColor.CGColor;
+    self.saveBtn.layer.cornerRadius = 10.0;
+    [self.saveBtn addTarget:self action:@selector(saveButtonWasTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.saveBtn];
 }
 
 - (void)saveButtonWasTapped {

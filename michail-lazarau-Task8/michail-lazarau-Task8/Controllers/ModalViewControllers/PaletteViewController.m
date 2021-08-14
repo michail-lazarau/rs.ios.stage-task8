@@ -7,8 +7,6 @@ CGFloat const colorLayerSize = 24;
 CGFloat const buttonSize = 40;
 
 @interface PaletteViewController ()
-
-@property(nonatomic,strong) UIButton *saveBtn;
 //@property(nonatomic,strong) NSMutableArray<UIButton *> *selectedButtons;
 
 @end
@@ -40,19 +38,7 @@ CGFloat const buttonSize = 40;
     self.colorsSelected = [[NSMutableArray<UIColor*> alloc] init];
     }
     
-    [self setupSaveButton];
     [self setupColorButtons];
-}
-
-- (void)setupSaveButton {
-    self.saveBtn = [[UIButton alloc] initWithFrame:CGRectMake(250, 20, 85, 32)];
-    [self.saveBtn setTitle:@"Save" forState:UIControlStateNormal];
-    [self.saveBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
-    self.saveBtn.layer.borderWidth = 1.0;
-    self.saveBtn.layer.borderColor = UIColor.systemGreenColor.CGColor;
-    self.saveBtn.layer.cornerRadius = 10.0;
-    [self.saveBtn addTarget:self action:@selector(saveButtonWasTapped) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.saveBtn];
 }
 
 - (void) setupColorButtons {

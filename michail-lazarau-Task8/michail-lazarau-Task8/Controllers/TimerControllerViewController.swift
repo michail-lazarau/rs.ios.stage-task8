@@ -1,8 +1,8 @@
 import UIKit
 
-class TimerControllerViewController: ModalViewController {
+@objc class TimerControllerViewController: ModalViewController {
 
-    override func viewDidLoad() {
+        @objc override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
